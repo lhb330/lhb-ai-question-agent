@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lhb.mapper.GradeInfoMapper">
+    <resultMap id="BaseResultMap" type="com.lhb.entity.GradeInfo">
+        <id column="id" property="id"/>
+        <result column="grade_code" property="gradeCode"/>
+        <result column="grade_name" property="gradeName"/>
+        <result column="school_id" property="schoolId"/>
+        <result column="status" property="status"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="version" property="version"/>
+    </resultMap>
+
+    <!-- 通用字段列表 -->
+    <sql id="Base_Column_List">
+        id, grade_code, grade_name, school_id, status, create_time, update_time, "version"
+    </sql>
+
+</mapper>

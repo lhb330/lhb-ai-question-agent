@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lhb.mapper.AiQuestionBatchMapper">
+
+    <resultMap id="BaseResultMap" type="com.lhb.entity.AiQuestionBatch">
+        <id column="id" property="id"/>
+        <result column="batch_no" property="batchNo"/>
+        <result column="creator_id" property="creatorId"/>
+        <result column="subject_id" property="subjectId"/>
+        <result column="stage_code" property="stageCode"/>
+        <result column="grade_code" property="gradeCode"/>
+        <result column="kp_ids" property="kpIds"/>
+        <result column="question_type_code" property="questionTypeCode"/>
+        <result column="difficulty_code" property="difficultyCode"/>
+        <result column="question_count" property="questionCount"/>
+        <result column="generate_status" property="generateStatus"/>
+        <result column="success_count" property="successCount"/>
+        <result column="fail_count" property="failCount"/>
+        <result column="error_msg" property="errorMsg"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="version" property="version"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, batch_no, creator_id, subject_id, stage_code, grade_code, kp_ids, question_type_code,
+        difficulty_code, question_count, generate_status, success_count, fail_count, error_msg,
+        create_time, update_time, "version"
+    </sql>
+</mapper>

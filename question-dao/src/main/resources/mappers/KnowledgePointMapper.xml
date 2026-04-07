@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lhb.mapper.KnowledgePointMapper">
+
+    <resultMap id="BaseResultMap" type="com.lhb.entity.KnowledgePoint">
+        <id column="id" property="id"/>
+        <result column="kp_code" property="kpCode"/>
+        <result column="kp_name" property="kpName"/>
+        <result column="subject_id" property="subjectId"/>
+        <result column="parent_kp_id" property="parentKpId"/>
+        <result column="stage_code" property="stageCode"/>
+        <result column="sort" property="sort"/>
+        <result column="status" property="status"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="version" property="version"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, kp_code, kp_name, subject_id, parent_kp_id, stage_code, sort, status, create_time, update_time, "version"
+    </sql>
+
+    <!-- 查询知识点最大 sort 值，null 自动返回 0 -->
+    <select id="getMaxSort" resultType="java.lang.Integer">
+        SELECT COALESCE(MAX(tkp.sort), 0) AS sort FROM t_knowledge_point tkp
+    </select>
+
+    <!-- 查询当前科目下最大知识点序号 -->
+    <select id="getMaxSeqBySubjectId" resultType="java.lang.Integer">
+        SELECT COALESCE(MAX( CAST(SUBSTRING(kp_code FROM '(\d+)$') AS INTEGER)), 0)
+         FROM t_knowledge_point
+        WHERE subject_id = #{subjectId}
+    </select>
+
+</mapper>

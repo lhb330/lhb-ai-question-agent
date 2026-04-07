@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lhb.mapper.AiQuestionVectorMapper">
+
+    <resultMap id="BaseResultMap" type="com.lhb.entity.AiQuestionVector">
+        <id column="id" property="id"/>
+        <result column="question_no" property="questionNo"/>
+        <result column="subject_id" property="subjectId"/>
+        <result column="stage_code" property="stageCode"/>
+        <result column="grade_id" property="gradeId"/>
+        <result column="kp_id" property="kpId"/>
+        <result column="question_type_code" property="questionTypeCode"/>
+        <result column="difficulty_code" property="difficultyCode"/>
+        <result column="content" property="content"/>
+        <result column="question_analysis" property="questionAnalysis"/>
+        <result column="question_answer" property="questionAnswer"/>
+        <result column="embedding" property="embedding" typeHandler="com.lhb.typeHandlers.FloatArrayToVectorTypeHandler"/>
+        <result column="creator_id" property="creatorId"/>
+        <result column="generate_batch_no" property="generateBatchNo"/>
+        <result column="status" property="status"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="version" property="version"/>
+        <result column="metadata" property="metadata" typeHandler="com.lhb.typeHandlers.MapToJsonTypeHandler"/>
+        <result column="question_score" property="questionScore"/>
+        <result column="source_kb_id" property="sourceKbId"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, question_no, subject_id, stage_code, grade_id, kp_id, question_type_code, difficulty_code,
+        "content", question_analysis, question_answer, embedding, creator_id,
+        generate_batch_no, status, create_time, update_time, "version", metadata,
+        question_score,source_kb_id
+    </sql>
+
+
+
+</mapper>

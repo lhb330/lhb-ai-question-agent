@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lhb.mapper.SysLoginLogMapper">
+
+    <resultMap id="BaseResultMap" type="com.lhb.entity.SysLoginLog">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="login_account" property="loginAccount"/>
+        <result column="login_ip" property="loginIp"/>
+        <result column="login_location" property="loginLocation"/>
+        <result column="login_device" property="loginDevice"/>
+        <result column="login_status" property="loginStatus"/>
+        <result column="error_msg" property="errorMsg"/>
+        <result column="login_time" property="loginTime"/>
+        <result column="logout_time" property="logoutTime"/>
+        <result column="version" property="version"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, user_id, login_account, login_ip, login_location, login_device, login_status, error_msg,
+        login_time, logout_time, "version"
+    </sql>
+</mapper>
