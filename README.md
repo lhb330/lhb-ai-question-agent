@@ -113,7 +113,7 @@ question-common
 
 - JDK 21
 - Maven 3.9+
-- PostgreSQL
+- PostgreSQL 18.3
 - Redis
 
 ## 配置说明
