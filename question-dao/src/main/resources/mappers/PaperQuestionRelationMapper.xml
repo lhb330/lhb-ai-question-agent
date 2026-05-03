@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lhb.mapper.PaperQuestionRelationMapper">
+
+    <resultMap id="BaseResultMap" type="com.lhb.entity.PaperQuestionRelation">
+        <id column="id" property="id"/>
+        <result column="paper_id" property="paperId"/>
+        <result column="question_id" property="questionId"/>
+        <result column="question_score" property="questionScore"/>
+        <result column="question_sort" property="questionSort"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="version" property="version"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, paper_id, question_id, question_score, question_sort, create_time, update_time, "version"
+    </sql>
+</mapper>
